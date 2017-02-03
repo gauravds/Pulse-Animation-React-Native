@@ -1,0 +1,30 @@
+{
+  "name": "Pulse-Animation-React-Native",
+  "version": "1.0.0",
+  "description": "Tinder-like pulse loader for your react native app",
+  "main": "PulseLoader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gauravds/Pulse-Animation-React-Native"
+  },
+  "keywords": [
+    "react-native",
+    "tinder",
+    "loader",
+    "pulse-loader",
+    "location-loader",
+    "pulse-animation"
+  ],
+  "peerDependencies": {
+    "react-native": "^0.39"
+  },
+  "author": "Gaurav D. Sharma",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gauravds/Pulse-Animation-React-Native/issues"
+  },
+  "homepage": "https://github.com/gauravds/Pulse-Animation-React-Native#readme"
+}
