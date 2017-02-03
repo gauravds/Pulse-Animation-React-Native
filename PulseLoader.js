@@ -1,12 +1,18 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Animated, Easing } from 'react-native';
+import {
+	View,
+	Image,
+	TouchableOpacity,
+	Animated,
+	Easing,
+	StyleSheet
+} from 'react-native';
 import Pulse from './Pulse';
-
 
 export default class LocationPulseLoader extends React.Component {
 	constructor(props) {
 		super(props);
-	
+
 		this.state = {
 			circles: []
 		};
@@ -50,12 +56,7 @@ export default class LocationPulseLoader extends React.Component {
 		const { size, avatar, avatarBackgroundColor, interval } = this.props;
 
 		return (
-			<View style={{
-				flex: 1,
-				backgroundColor: 'transparent',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}>
+			<View style={[styles.container, this.props.style]}>
 				{this.state.circles.map((circle) => (
 					<Pulse
 						key={circle}
@@ -74,7 +75,7 @@ export default class LocationPulseLoader extends React.Component {
 					}}
 				>
 					<Image
-						source={{ uri: avatar }}
+						source={avatar}
 						style={{
 							width: size,
 							height: size,
@@ -85,20 +86,21 @@ export default class LocationPulseLoader extends React.Component {
 				</TouchableOpacity>
 			</View>
 		);
-	}	
+	}
 }
 
 LocationPulseLoader.propTypes = {
   interval: React.PropTypes.number,
   size: React.PropTypes.number,
   pulseMaxSize: React.PropTypes.number,
-  avatar: React.PropTypes.string.isRequired,
+  avatar: React.PropTypes.object,
   avatarBackgroundColor: React.PropTypes.string,
   pressInValue: React.PropTypes.number,
   pressDuration: React.PropTypes.number,
   borderColor: React.PropTypes.string,
   backgroundColor: React.PropTypes.string,
   getStyle: React.PropTypes.func,
+	style: React.PropTypes.object,
 };
 
 LocationPulseLoader.defaultProps = {
@@ -106,7 +108,7 @@ LocationPulseLoader.defaultProps = {
   size: 100,
   pulseMaxSize: 250,
   avatar: undefined,
-  avatarBackgroundColor: 'white',
+  avatarBackgroundColor: 'transparent',
   pressInValue: 0.8,
   pressDuration: 150,
   pressInEasing: Easing.in,
@@ -116,3 +118,11 @@ LocationPulseLoader.defaultProps = {
   getStyle: undefined,
 };
 
+const styles = StyleSheet.create({
+  container: {
+		flex: 1,
+		backgroundColor: 'transparent',
+		justifyContent: 'center',
+		// alignItems: 'center',
+	},
+});

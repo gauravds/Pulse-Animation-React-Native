@@ -6,7 +6,7 @@ const { height, width } = Dimensions.get('window');
 export default class Pulse extends React.Component {
 	constructor(props) {
 		super(props);
-	
+
 		this.anim = new Animated.Value(0);
 	}
 
@@ -50,7 +50,7 @@ export default class Pulse extends React.Component {
 				/>
 			</View>
 		);
-	}	
+	}
 }
 
 
